@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C302140E29771627004ABA4F /* CheerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302140D29771627004ABA4F /* CheerModel.swift */; };
 		C3E73DA629707A5400F82478 /* WeAreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E73DA529707A5400F82478 /* WeAreApp.swift */; };
 		C3E73DAA29707A5700F82478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3E73DA929707A5700F82478 /* Assets.xcassets */; };
 		C3E73DAD29707A5700F82478 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3E73DAC29707A5700F82478 /* Preview Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C302140D29771627004ABA4F /* CheerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerModel.swift; sourceTree = "<group>"; };
 		C3E73DA229707A5400F82478 /* WeAre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeAre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E73DA529707A5400F82478 /* WeAreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeAreApp.swift; sourceTree = "<group>"; };
 		C3E73DA729707A5400F82478 /* WeAreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeAreView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				C3E73DB529707D6F00F82478 /* CheerButton.swift */,
 				C3E73DB729707EC700F82478 /* CheerManager.swift */,
 				C3E73DB929707F9700F82478 /* MascotView.swift */,
+				C302140D29771627004ABA4F /* CheerModel.swift */,
 			);
 			path = WeAre;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C302140E29771627004ABA4F /* CheerModel.swift in Sources */,
 				C3E73DB429707B4F00F82478 /* CheerTextView.swift in Sources */,
 				C3E73DBB29708F2200F82478 /* WeAreView.swift in Sources */,
 				C3E73DA629707A5400F82478 /* WeAreApp.swift in Sources */,

@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct WeAreView: View {
-    @ObservedObject var cheerManager = CheerManager()
+    @EnvironmentObject var cheerManager : CheerManager
     var body: some View {
         ZStack {
             Color.mint
                 .ignoresSafeArea()
             VStack {
                 MascotView(imageName: cheerManager.mascotImageName)
-                CheerTextView(title: cheerManager.firstCheerText, isVisible: cheerManager.shouldShowFirstCheer)
-                CheerTextView(title: cheerManager.secondCheerText, isVisible: cheerManager.shouldShowSecondCheer)
+                CheerTextView(title: cheerManager.cheerText, isVisible: cheerManager.shouldShowFirstCheer)
+                CheerTextView(title: cheerManager.cheerText, isVisible: cheerManager.shouldShowSecondCheer)
                 CheerButton(action: cheerManager.doACheer)
-                
             }
         }
     }
@@ -27,5 +26,6 @@ struct WeAreView: View {
 struct WeAreView_Previews: PreviewProvider {
     static var previews: some View {
         WeAreView()
+            .environmentObject(CheerManager())
     }
 }
