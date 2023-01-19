@@ -20,33 +20,27 @@ class CheerManager : ObservableObject {
     var cheerState : CheerState = .initial
     
     var mascotImageName : String {
-        switch cheerState {
-        case .initial:
-            return cheers.initialCheer.imageName
-        case .firstRoundFirstCheer:
-            return cheers.firstRound.firstCheer.imageName
-        case .firstRoundSecondCheer:
-            return cheers.firstRound.secondCheer.imageName
-        case .secondRoundFirstCheer:
-            return cheers.secondRound.firstCheer.imageName
-        case .secondRoundSecondCheer:
-            return cheers.secondRound.secondCheer.imageName
-        }
+        currentCheer.imageName
     }
     
     var cheerText : String {
+        currentCheer.title
+    }
+    
+    var currentCheer : OneCheer {
         switch cheerState {
         case .initial:
-            return cheers.initialCheer.title
+            return cheers.initialCheer
         case .firstRoundFirstCheer:
-            return cheers.firstRound.firstCheer.title
+            return cheers.firstRound.firstCheer
         case .firstRoundSecondCheer:
-            return cheers.firstRound.secondCheer.title
+            return cheers.firstRound.secondCheer
         case .secondRoundFirstCheer:
-            return cheers.secondRound.firstCheer.title
+            return cheers.secondRound.firstCheer
         case .secondRoundSecondCheer:
-            return cheers.secondRound.secondCheer.title
+            return cheers.secondRound.secondCheer
         }
+        
     }
         
     var shouldShowFirstCheer : Bool {

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CheerButton: View {
+    @EnvironmentObject var cheerManager : CheerManager
     var action : () -> Void
     var body: some View {
         Button(action: action) {
@@ -15,11 +16,13 @@ struct CheerButton: View {
         }
         .buttonStyle(.borderedProminent)
         .cornerRadius(10)
+        Text(cheerManager.cheerText)
     }
 }
 
 struct CheerButton_Previews: PreviewProvider {
     static var previews: some View {
         CheerButton(action: {})
+            .environmentObject(CheerManager())
     }
 }
