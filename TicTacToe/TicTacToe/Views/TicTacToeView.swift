@@ -9,21 +9,40 @@ import SwiftUI
 
 struct TicTacToeView: View {
     @EnvironmentObject var manager : GameManager
+    @State var showPreferences : Bool = false
     var body: some View {
         VStack {
             ZStack{
-                //TODO: construct views for the games
-                OShape(innerRadius: 20, outerRadius: 35)
-                    .fill(.red, style: FillStyle(eoFill: true))
-                
-                XShapeView()
-                    .offset(manager.getOffset(for: 0)!)
-                
+                ForEach(manager.ticTacToeGame) { p in
+                    CellView(symbol: p.symbol)
+                        .offset(manager.getOffset(for: p.id)!)
+                        .onTapGesture {
+                            manager.mark(at: p.id)
+                            manager.checkGame()
+                        }
+                    
+                }
                 Grid(columns: 3, rows: 3)
                     .stroke(.black, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
                     .frame(width: 300, height: 300)
             }
+            
+            Button {
+                showPreferences = true
+            } label: {
+                Image(systemName: "pencil.circle")
+            }
+
         }
+        .sheet(isPresented: $manager.showSheet) {
+            manager.resetGame()
+        } content: {
+            EndGameView()
+        }
+        .sheet(isPresented: $showPreferences) {
+            PreferencesView(preferences: $manager.preferences)
+        }
+
     }
 }
 
@@ -33,9 +52,9 @@ struct CellView : View {
     var body : some View {
         switch symbol {
         case .x:
-            XShapeView(color: .blue)
+            XShapeView(color: manager.preferences.xColor)
         case .o:
-            OShapeView(color: .red)
+            OShapeView(color: manager.preferences.oColor)
         case .none:
             Rectangle()
                 .frame(width: 20, height: 20)

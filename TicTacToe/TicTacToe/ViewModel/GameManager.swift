@@ -13,10 +13,20 @@ enum GameState {
     case inGame, xWin, oWin, draw
 }
 
+struct Preferences {
+    var xColor : Color = .red
+    var oColor : Color = .blue
+    static let colorOptions : [Color] = [.red, .green, .yellow, .blue]
+}
+
 class GameManager : ObservableObject {
     @Published var ticTacToeGame = TicTacToeGame()
     @Published var gameState : GameState = .inGame
     
+    @Published var currentTurn = GamePeice.GamePeiceSymbols.x
+    @Published var showSheet : Bool = false
+    
+    @Published var preferences = Preferences()
     
     // used to translate the index of a piece to it's offset on the views
     private let offsetsForID : [Int : CGSize] = [
@@ -40,16 +50,20 @@ class GameManager : ObservableObject {
         gameState = .inGame
     }
     
-    
     func mark(at index: Int) {
-        //TODO: marking a peice when selected
+        if ticTacToeGame[index].symbol == .none {
+            ticTacToeGame.mark(at: index, currentTurn)
+            currentTurn = currentTurn == .x ? .o : .x
+        }
     }
     
     func checkGame(){
         if let winner = ticTacToeGame.checkWinner() {
             gameState = winner == .x ? .xWin : .oWin
+            showSheet = true
         } else if ticTacToeGame.checkDraw() {
             gameState = .draw
+            showSheet = true
         }
     }
 }
