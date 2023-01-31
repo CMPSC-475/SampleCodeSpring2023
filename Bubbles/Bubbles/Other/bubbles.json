@@ -1,0 +1,25 @@
+[
+    {   "radius":50,
+        "id":"B899117C-4CC3-4511-806B-1034BB2D8EEA",
+        "favorite":false,
+        "position": {"x":181.5,"y":197},
+        "color":{"opacity":1,"red":1,"blue":0,"green":0}
+        
+    },
+    {
+        "radius":50,
+        "id":"BF20FD8F-8BF5-4957-B65C-B3766B4A7A91",
+        "favorite":false,
+        "position":{"x":92,"y":339},
+        "color":{"opacity":1,"red":0,"blue":0,"green":1}
+        
+    },
+    {
+        "radius":50,
+        "id":"FFE57E4A-BB45-42D1-B768-24BCDC26C025",
+        "favorite":false,
+        "position":{"x":270,"y":339},
+        "color":{"opacity":1,"red":0,"blue":1,"green":0}
+        
+    }
+]
