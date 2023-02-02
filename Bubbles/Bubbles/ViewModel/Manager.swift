@@ -10,36 +10,50 @@ import CoreGraphics
 
 class Manager : ObservableObject {
     @Published var bubbles : [Bubble] = [Bubble]()
-    var storageManager : StorageManager
+    var storageManager : StorageManager<[Bubble]>
+    private var filename = "bubbles"
 
     
     init() {
-        let _storageManager = StorageManager()
-        bubbles = _storageManager.bubbles
+        let _storageManager = StorageManager<[Bubble]>(filename: filename)
+        bubbles = _storageManager.modelData ?? []
         storageManager = _storageManager
         
     }
     //MARK: - Intents
     // add a new bubble (result of tapping on main view)
     func addBubble(at location:CGPoint) {
-        //TODO: add a new bubble at location
+        var randomVal : Double {Double(Int.random(in: 0...255))/255}
+        
+        let point = Point(x: Double(location.x), y: Double(location.y))
+        let cc = ColorComponent(red: randomVal, green: randomVal, blue: randomVal)
+        let bubble = Bubble(color: cc, position: point)
+        bubbles.append(bubble)
     }
     
     func delete(_ b:Bubble) {
-        //TODO: delete bubble
+        if let i =  bubbles.firstIndex(of: b) {
+            bubbles.remove(at: i)
+        }
     }
     
     func bringToFront(_ b:Bubble) {
-        //TODO: send bubble to the front
+        if let i =  bubbles.firstIndex(of: b) {
+            let bubble = bubbles.remove(at: i)
+            bubbles.append(bubble)
+        }
     }
     
     func sendToBack(_ b:Bubble) {
-        //TODO: send bubble to the back
+        if let i =  bubbles.firstIndex(of: b) {
+            let bubble = bubbles.remove(at: i)
+            bubbles.insert(bubble, at: 0)
+        }
     }
     
     //MARK: Persistant
     func save() {
-        storageManager.save(bubbles: bubbles)
+        storageManager.save(modelData: bubbles)
     }
 }
 

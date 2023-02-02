@@ -8,12 +8,14 @@
 import Foundation
 
 
-class StorageManager {
-    let filename = "bubbles"
-    var bubbles : [Bubble] = [Bubble]()
+class StorageManager<T:Codable> {
+
+    var modelData : T?
+    private let filename : String
     
-    init() {
+    init(filename: String) {
         
+        self.filename = filename
         let documentsUrl = URL.documentsDirectory.appending(component: filename + ".json")
         let exists = FileManager.default.fileExists(atPath: documentsUrl.path())
         
@@ -21,9 +23,9 @@ class StorageManager {
             do {
                 let data = try Data(contentsOf: documentsUrl)
                 let decoder = JSONDecoder()
-                bubbles = try decoder.decode([Bubble].self, from: data)
+                modelData = try decoder.decode(T.self, from: data)
             } catch {
-                bubbles = []
+                modelData = nil
                 print(error)
             }
             return
@@ -33,25 +35,25 @@ class StorageManager {
         let url = bundle.url(forResource: filename, withExtension: "json")
         
         guard url != nil else {
-            bubbles = []
+            modelData = nil
             return
         }
         do {
             let data = try Data(contentsOf: url!)
             let decoder = JSONDecoder()
-            bubbles = try decoder.decode([Bubble].self, from: data)
+            modelData = try decoder.decode(T.self, from: data)
         } catch {
-            bubbles = []
+            modelData = nil
             print(error)
         }
     
     }
     
-    func save(bubbles : [Bubble]) {
+    func save(modelData : T) {
         do {
             let encoder = JSONEncoder()
             let url = URL.documentsDirectory.appending(component: filename + ".json")
-            let data = try encoder.encode(bubbles)
+            let data = try encoder.encode(modelData)
             try data.write(to: url)
         } catch {
             print(error)

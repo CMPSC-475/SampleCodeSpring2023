@@ -12,14 +12,18 @@ struct BubblesView: View {
     let backgroundColor : Color = Color.gray.opacity(0.5)
     
     var body: some View {
+        let addBubbleGest = SpatialTapGesture()
+            .onEnded { value in
+                manager.addBubble(at: value.location)
+            }
         ZStack {
             backgroundColor
                 .ignoresSafeArea()
             ForEach($manager.bubbles) { $bubble in
                 BubbleView(bubble: $bubble)
-                
             }
         }
+        .gesture(addBubbleGest)
     }
 }
 

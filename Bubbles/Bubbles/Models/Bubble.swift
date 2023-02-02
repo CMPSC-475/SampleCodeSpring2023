@@ -27,14 +27,19 @@ struct Bubble : Identifiable, Equatable, Codable{
     static let standard = Bubble(color: ColorComponent.standard, position: Point(x: 150 , y: 300), radius: 100)
     
     mutating func move(by size:Size) {
-        //TODO: move bubbles position
+        position.x = position.x + size.width
+        position.y = position.y + size.height
     }
     
     mutating func changeSize(by d:Double) {
-        //TODO: change size of bubble
+        let base : Double = 50
+        let min : Double = 0.25
+        let max : Double = 3.0
+        guard (d > min && d < max) else {return}
+        radius = base * d
     }
     
     mutating func toggleFavorite() {
-        //TODO: favorite/unfavorite bubble
+        favorite.toggle()
     }
 }
