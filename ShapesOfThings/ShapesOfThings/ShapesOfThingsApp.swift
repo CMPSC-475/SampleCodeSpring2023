@@ -11,7 +11,7 @@ import SwiftUI
 struct ShapesOfThingsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AnimationsView()
         }
     }
 }
