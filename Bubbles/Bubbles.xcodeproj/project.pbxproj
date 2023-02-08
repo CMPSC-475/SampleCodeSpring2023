@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C338597A29944B2100D946DE /* GestureBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C338597929944B2100D946DE /* GestureBubbleView.swift */; };
+		C338597C29944CC300D946DE /* FavoriteBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C338597B29944CC300D946DE /* FavoriteBubbleView.swift */; };
+		C338597E299462C900D946DE /* ComponentEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C338597D299462C900D946DE /* ComponentEditView.swift */; };
 		C373A7FC2988746E00B0DB37 /* BubblesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373A7FB2988746E00B0DB37 /* BubblesApp.swift */; };
 		C373A7FE2988746E00B0DB37 /* BubblesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373A7FD2988746E00B0DB37 /* BubblesView.swift */; };
 		C373A8002988747100B0DB37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C373A7FF2988747100B0DB37 /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C338597929944B2100D946DE /* GestureBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureBubbleView.swift; sourceTree = "<group>"; };
+		C338597B29944CC300D946DE /* FavoriteBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBubbleView.swift; sourceTree = "<group>"; };
+		C338597D299462C900D946DE /* ComponentEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentEditView.swift; sourceTree = "<group>"; };
 		C373A7F82988746E00B0DB37 /* Bubbles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bubbles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C373A7FB2988746E00B0DB37 /* BubblesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesApp.swift; sourceTree = "<group>"; };
 		C373A7FD2988746E00B0DB37 /* BubblesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesView.swift; sourceTree = "<group>"; };
@@ -109,6 +115,9 @@
 			children = (
 				C373A7FD2988746E00B0DB37 /* BubblesView.swift */,
 				C373A81529887EEE00B0DB37 /* BubbleView.swift */,
+				C338597929944B2100D946DE /* GestureBubbleView.swift */,
+				C338597B29944CC300D946DE /* FavoriteBubbleView.swift */,
+				C338597D299462C900D946DE /* ComponentEditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,7 +204,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C373A7FE2988746E00B0DB37 /* BubblesView.swift in Sources */,
+				C338597C29944CC300D946DE /* FavoriteBubbleView.swift in Sources */,
+				C338597E299462C900D946DE /* ComponentEditView.swift in Sources */,
 				C373A7FC2988746E00B0DB37 /* BubblesApp.swift in Sources */,
+				C338597A29944B2100D946DE /* GestureBubbleView.swift in Sources */,
 				C373A81629887EEE00B0DB37 /* BubbleView.swift in Sources */,
 				C373A82229898B5200B0DB37 /* StorageManager.swift in Sources */,
 				C373A80D2988785800B0DB37 /* ColorComponent.swift in Sources */,
