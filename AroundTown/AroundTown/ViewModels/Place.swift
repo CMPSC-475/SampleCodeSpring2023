@@ -15,7 +15,7 @@ class Place :  NSObject, Identifiable, MKAnnotation {
     var phoneNumber : String
     var url : String
     var customName : String?
-    
+    var favorite : Bool = false
     var id  = UUID()
 
     

@@ -10,12 +10,34 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var manager : MapManager
     var body: some View {
-        NavigationStack {
+        let categoriesToolbarItem = ToolbarItem(placement: .navigationBarTrailing) {
+            SearchButtonView(selectedCategory: $manager.selectedCategory)
+        }
+        
+        let diningToolbarItem = ToolbarItem(placement: .navigationBarLeading){
+            DiningMenuView(selectedRestaurant: $manager.selectedRestaurant)
+        }
+        
+        return NavigationStack {
             DowntownMapView()
+                .ignoresSafeArea()
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        SearchButtonView()
+                    categoriesToolbarItem
+                    diningToolbarItem
+                }
+                .sheet(isPresented: $manager.showSheet, content: {
+                    PlaceDetailsView(place: manager.selectedPlace)
+                })
+                .confirmationDialog("spot", isPresented: $manager.showConfirmation, presenting: manager.selectedPlace) { place in
+                    Button(place.favorite ? "unfavorite" : "favorite") {
+                        manager.toggleFavorite(place: place)
                     }
+                    Button("Details") {
+                        manager.selectedPlace = place
+                        manager.showSheet = true
+                    }
+                } message: { place in
+                    Text("\(place.title ?? "unknown")")
                 }
         }
     }

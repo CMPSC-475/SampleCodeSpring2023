@@ -7,8 +7,19 @@
 
 import SwiftUI
 
-struct SpotDetailsView: View {
-    var title : String = "Foo Bar"
+struct PlaceDetailsView: View {
+    var place : Place?
+    
+    private var title : String {
+        guard place != nil else {return "unknown"}
+        return place!.name
+    }
+    
+    private var isFavorite : Bool {
+        guard place != nil else {return false}
+        return place!.favorite
+    }
+    
     @State var angle = 90.0
     var repeatingAnimation: Animation {
         Animation
@@ -17,13 +28,13 @@ struct SpotDetailsView: View {
     }
     
     var body: some View {
-        VStack {
-            Image(systemName: "circle.grid.hex.fill")
+        
+        return VStack {
+            Image(systemName: isFavorite ? "star.fill" : "circle.grid.hex.fill")
                 .font(.system(size:80))
                 .padding()
                 .rotationEffect(.degrees(angle))
-                .foregroundColor(.cyan)
-            
+                .foregroundColor(isFavorite ? .yellow : .cyan)
             Text(title)
                 .font(.system(size:30))
         }
@@ -35,6 +46,6 @@ struct SpotDetailsView: View {
 
 struct SpotDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        SpotDetailsView()
+        PlaceDetailsView(place: Place.standard)
     }
 }
