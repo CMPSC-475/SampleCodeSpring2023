@@ -12,7 +12,7 @@ struct DowntownMapView: View {
     @EnvironmentObject var manager : MapManager
     @State var selectedSpot : Spot?
     var body: some View {
-        Map(coordinateRegion: $manager.region, annotationItems: manager.places, annotationContent: annotationFor(place:))
+        Map(coordinateRegion: $manager.region, showsUserLocation: true, annotationItems: manager.places, annotationContent: annotationFor(place:))
     }
 }
 

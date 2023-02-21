@@ -50,9 +50,10 @@ extension DowntownMapView {
                 manager.selectedPlace = place
                 manager.showConfirmation = true
             }) {
-                Image(systemName: "mappin").renderingMode(.template)
+                Image(place.category?.rawValue.capitalized ?? "blue-pin").renderingMode(.template)
                     .foregroundColor(place.favorite ? .yellow : .blue)
                     .font(.system(size: 40))
+                    .scaleEffect(CGSize(width: manager.scaleFactorFor(place: place), height: manager.scaleFactorFor(place: place)))
             }
         }
     }

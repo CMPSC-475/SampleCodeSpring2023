@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3327AA429A473AD001FF919 /* MapManager+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3327AA329A473AD001FF919 /* MapManager+Search.swift */; };
+		C3327AA629A473E2001FF919 /* MapManager+GeoCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3327AA529A473E2001FF919 /* MapManager+GeoCode.swift */; };
+		C3327ACA29A536FE001FF919 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3327AC929A536FE001FF919 /* TabbedView.swift */; };
+		C3327ACC29A54021001FF919 /* MapManager+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3327ACB29A54021001FF919 /* MapManager+Location.swift */; };
+		C3327ACE29A54274001FF919 /* SCWalk.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C3327ACD29A54274001FF919 /* SCWalk.gpx */; };
 		C3463437299B3C9E00FE1395 /* AroundTownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3463436299B3C9E00FE1395 /* AroundTownApp.swift */; };
 		C346343B299B3CA000FE1395 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C346343A299B3CA000FE1395 /* Assets.xcassets */; };
 		C346343E299B3CA000FE1395 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C346343D299B3CA000FE1395 /* Preview Assets.xcassets */; };
@@ -26,6 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C3327AA329A473AD001FF919 /* MapManager+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapManager+Search.swift"; sourceTree = "<group>"; };
+		C3327AA529A473E2001FF919 /* MapManager+GeoCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapManager+GeoCode.swift"; sourceTree = "<group>"; };
+		C3327AC929A536FE001FF919 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
+		C3327ACB29A54021001FF919 /* MapManager+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapManager+Location.swift"; sourceTree = "<group>"; };
+		C3327ACD29A54274001FF919 /* SCWalk.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SCWalk.gpx; sourceTree = "<group>"; };
 		C3463433299B3C9E00FE1395 /* AroundTown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AroundTown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3463436299B3C9E00FE1395 /* AroundTownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundTownApp.swift; sourceTree = "<group>"; };
 		C346343A299B3CA000FE1395 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +111,7 @@
 				C3463455299B3D8D00FE1395 /* DowntownMapView.swift */,
 				C3463459299B3DBE00FE1395 /* SpotDetailsView.swift */,
 				C3463479299D6D3F00FE1395 /* DowntownMapView+Annotations.swift */,
+				C3327AC929A536FE001FF919 /* TabbedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,7 +121,10 @@
 			children = (
 				C346344D299B3D2B00FE1395 /* Place.swift */,
 				C346344F299B3D4F00FE1395 /* MapManager.swift */,
+				C3327ACB29A54021001FF919 /* MapManager+Location.swift */,
 				C3463451299B3D7000FE1395 /* Category.swift */,
+				C3327AA329A473AD001FF919 /* MapManager+Search.swift */,
+				C3327AA529A473E2001FF919 /* MapManager+GeoCode.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -118,6 +132,7 @@
 		C3463446299B3CB900FE1395 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C3327ACD29A54274001FF919 /* SCWalk.gpx */,
 				C346345D299BF39000FE1395 /* Restaurants.json */,
 				C3463447299B3CD000FE1395 /* Spot.swift */,
 				C3463449299B3CDD00FE1395 /* LocationModel.swift */,
@@ -193,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3327ACE29A54274001FF919 /* SCWalk.gpx in Resources */,
 				C346345E299BF39100FE1395 /* Restaurants.json in Resources */,
 				C346343E299B3CA000FE1395 /* Preview Assets.xcassets in Resources */,
 				C346343B299B3CA000FE1395 /* Assets.xcassets in Resources */,
@@ -210,12 +226,16 @@
 				C3463454299B3D8000FE1395 /* MainView.swift in Sources */,
 				C3463458299B3DAC00FE1395 /* SearchButtonView.swift in Sources */,
 				C346345A299B3DBE00FE1395 /* SpotDetailsView.swift in Sources */,
+				C3327ACC29A54021001FF919 /* MapManager+Location.swift in Sources */,
 				C346344A299B3CDD00FE1395 /* LocationModel.swift in Sources */,
 				C3463456299B3D8D00FE1395 /* DowntownMapView.swift in Sources */,
+				C3327AA629A473E2001FF919 /* MapManager+GeoCode.swift in Sources */,
 				C346347D299D6FA000FE1395 /* DiningMenuView.swift in Sources */,
+				C3327ACA29A536FE001FF919 /* TabbedView.swift in Sources */,
 				C346344E299B3D2B00FE1395 /* Place.swift in Sources */,
 				C3463450299B3D4F00FE1395 /* MapManager.swift in Sources */,
 				C3463448299B3CD000FE1395 /* Spot.swift in Sources */,
+				C3327AA429A473AD001FF919 /* MapManager+Search.swift in Sources */,
 				C3463437299B3C9E00FE1395 /* AroundTownApp.swift in Sources */,
 				C346347A299D6D3F00FE1395 /* DowntownMapView+Annotations.swift in Sources */,
 				C3463452299B3D7000FE1395 /* Category.swift in Sources */,
@@ -349,6 +369,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AroundTown/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to track you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -377,6 +398,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AroundTown/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to track you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

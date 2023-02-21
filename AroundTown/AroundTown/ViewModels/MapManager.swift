@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 import SwiftUI
 
-class MapManager  : ObservableObject {
+class MapManager  : NSObject, ObservableObject {
     @Published var locationModel : LocationModel
 
     @Published var region : MKCoordinateRegion
@@ -39,10 +39,17 @@ class MapManager  : ObservableObject {
     
     @Published var places = [Place]()
     
-    init(){
+    let locationManager : CLLocationManager
+    
+    override init(){
         let _locationModel = LocationModel()
         region = MKCoordinateRegion(center: _locationModel.centerCoord.coordCL2D, span: MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span))
         locationModel = _locationModel
+        locationManager = CLLocationManager()
+        super.init()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = .leastNonzeroMagnitude
     }
     
     //MARK: Helper Methods
@@ -58,39 +65,13 @@ class MapManager  : ObservableObject {
         self.places[index].favorite.toggle()
     }
     
-    //MARK: Local Search
-    func performSearch(on category: Category?) {
-        guard let category = category else { return }
-        self.places = []
-        let request = MKLocalSearch.Request()
-        request.region = region
-        request.naturalLanguageQuery = category.rawValue
-        let search = MKLocalSearch(request: request)
-        search.start { resp, error in
-            guard error == nil else { return }
-            let mapItems = resp!.mapItems
-            for item in mapItems {
-                let place = Place(mapItem: item, category: category)
-                self.places.append(place)
-            }
+    func scaleFactorFor(place : Place) -> Double {
+        if let selectedPlace = selectedPlace {
+            return place.id == selectedPlace.id ? 3.0 : 1.0
         }
+        return 1.0
     }
-    
-    //MARK: GeoCoding
-    func geoCode(for restaurant : Restaurant) {
-        let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(restaurant.address) { placemarks, error in
-            guard error == nil else { return }
-            if let placemark = placemarks?.first {
-                let mapMark = MKPlacemark(placemark: placemark)
-                let place = Place(placeMark: mapMark, category: .dining, name: restaurant.name)
-                self.places.removeAll()
-                self.places.append(place)
-                self.region.center = mapMark.coordinate
-                self.region.span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-            }
-        }
-    }
+
 }
 
 // define extensions here to have support for CoreLocation

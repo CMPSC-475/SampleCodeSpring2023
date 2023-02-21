@@ -19,7 +19,13 @@ struct MainView: View {
         }
         
         return NavigationStack {
-            DowntownMapView()
+            VStack {
+                DowntownMapView()
+                if !manager.places.isEmpty {
+                    TabbedView(places: manager.places, selectedPlace: $manager.selectedPlace)
+                        .frame(height: 100)
+                }
+            }
                 .ignoresSafeArea()
                 .toolbar {
                     categoriesToolbarItem
