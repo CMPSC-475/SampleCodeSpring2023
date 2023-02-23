@@ -12,6 +12,7 @@
 		C3327ACA29A536FE001FF919 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3327AC929A536FE001FF919 /* TabbedView.swift */; };
 		C3327ACC29A54021001FF919 /* MapManager+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3327ACB29A54021001FF919 /* MapManager+Location.swift */; };
 		C3327ACE29A54274001FF919 /* SCWalk.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C3327ACD29A54274001FF919 /* SCWalk.gpx */; };
+		C3327ADA29A7ECAE001FF919 /* W209Westgate.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C3327AD929A7ECAE001FF919 /* W209Westgate.gpx */; };
 		C3463437299B3C9E00FE1395 /* AroundTownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3463436299B3C9E00FE1395 /* AroundTownApp.swift */; };
 		C346343B299B3CA000FE1395 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C346343A299B3CA000FE1395 /* Assets.xcassets */; };
 		C346343E299B3CA000FE1395 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C346343D299B3CA000FE1395 /* Preview Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		C3327AC929A536FE001FF919 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
 		C3327ACB29A54021001FF919 /* MapManager+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapManager+Location.swift"; sourceTree = "<group>"; };
 		C3327ACD29A54274001FF919 /* SCWalk.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SCWalk.gpx; sourceTree = "<group>"; };
+		C3327AD929A7ECAE001FF919 /* W209Westgate.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = W209Westgate.gpx; sourceTree = "<group>"; };
 		C3463433299B3C9E00FE1395 /* AroundTown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AroundTown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3463436299B3C9E00FE1395 /* AroundTownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundTownApp.swift; sourceTree = "<group>"; };
 		C346343A299B3CA000FE1395 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		C3463446299B3CB900FE1395 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C3327AD929A7ECAE001FF919 /* W209Westgate.gpx */,
 				C3327ACD29A54274001FF919 /* SCWalk.gpx */,
 				C346345D299BF39000FE1395 /* Restaurants.json */,
 				C3463447299B3CD000FE1395 /* Spot.swift */,
@@ -211,6 +214,7 @@
 				C3327ACE29A54274001FF919 /* SCWalk.gpx in Resources */,
 				C346345E299BF39100FE1395 /* Restaurants.json in Resources */,
 				C346343E299B3CA000FE1395 /* Preview Assets.xcassets in Resources */,
+				C3327ADA29A7ECAE001FF919 /* W209Westgate.gpx in Resources */,
 				C346343B299B3CA000FE1395 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

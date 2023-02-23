@@ -25,4 +25,18 @@ extension MapManager {
             }
         }
     }
+    
+    func revGeoCodeUserLocation() {
+        guard let userRecentLocation = userRecentLocation else {return}
+        
+        let geoCoder = CLGeocoder()
+        geoCoder.reverseGeocodeLocation(userRecentLocation) { placemarks, error in
+            guard error == nil else {return}
+            if let placemark = placemarks?.first {
+                let mark = MKPlacemark(placemark: placemark)
+                self.usersLocationDescription = mark.title
+                self.showingAlert = true
+            }
+        }
+    }
 }

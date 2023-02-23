@@ -21,19 +21,37 @@ struct MainView: View {
         return NavigationStack {
             VStack {
                 DowntownMapView()
-                if !manager.places.isEmpty {
+                
+                if manager.route != nil {
+                    TabView {
+                        ForEach(0..<manager.route!.steps.count, id:\.self) { index in
+                            Text(manager.route!.steps[index].instructions)
+                        }
+                    }
+                    .tabViewStyle(.page)
+                    .frame(height: 200.0)
+                } else if !manager.places.isEmpty {
                     TabbedView(places: manager.places, selectedPlace: $manager.selectedPlace)
-                        .frame(height: 100)
+                        .frame(height: 200.0)
                 }
             }
                 .ignoresSafeArea()
                 .toolbar {
                     categoriesToolbarItem
                     diningToolbarItem
+                    ToolbarItem(placement: .bottomBar) {
+                        Button {
+                            manager.revGeoCodeUserLocation()
+                        } label: {
+                            Image(systemName: "map")
+                        }
+
+                    }
                 }
                 .sheet(isPresented: $manager.showSheet, content: {
                     PlaceDetailsView(place: manager.selectedPlace)
                 })
+                .alert(manager.usersLocationDescription ?? "No Info", isPresented: $manager.showingAlert, actions: {})
                 .confirmationDialog("spot", isPresented: $manager.showConfirmation, presenting: manager.selectedPlace) { place in
                     Button(place.favorite ? "unfavorite" : "favorite") {
                         manager.toggleFavorite(place: place)
@@ -41,6 +59,9 @@ struct MainView: View {
                     Button("Details") {
                         manager.selectedPlace = place
                         manager.showSheet = true
+                    }
+                    Button("Directions") {
+                        manager.provideDirections(to: place)
                     }
                 } message: { place in
                     Text("\(place.title ?? "unknown")")

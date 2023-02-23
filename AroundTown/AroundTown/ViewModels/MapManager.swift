@@ -41,6 +41,12 @@ class MapManager  : NSObject, ObservableObject {
     
     let locationManager : CLLocationManager
     
+    @Published var route : MKRoute?
+    
+    var userRecentLocation : CLLocation?
+    @Published var showingAlert = false
+    @Published var usersLocationDescription : String?
+    
     override init(){
         let _locationModel = LocationModel()
         region = MKCoordinateRegion(center: _locationModel.centerCoord.coordCL2D, span: MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span))

@@ -27,4 +27,25 @@ extension MapManager {
         }
     }
     
+    
+    func provideDirections(to place: Place) {
+        let request = MKDirections.Request()
+        request.source = MKMapItem.forCurrentLocation()
+        request.destination = MKMapItem(placemark: place.placeMark)
+        request.transportType = .walking
+        request.requestsAlternateRoutes = true
+        
+        let directions = MKDirections(request: request)
+        directions.calculate { response, error in
+            guard error == nil else {return}
+            
+            if let route = response?.routes.first {
+                self.route = route
+            }
+        }
+        
+        
+    }
+    
+    
 }
