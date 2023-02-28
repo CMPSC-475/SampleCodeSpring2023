@@ -29,6 +29,7 @@
 		C346345E299BF39100FE1395 /* Restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = C346345D299BF39000FE1395 /* Restaurants.json */; };
 		C346347A299D6D3F00FE1395 /* DowntownMapView+Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3463479299D6D3F00FE1395 /* DowntownMapView+Annotations.swift */; };
 		C346347D299D6FA000FE1395 /* DiningMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346347C299D6FA000FE1395 /* DiningMenuView.swift */; };
+		C34E031429AE79A1008B0814 /* UIMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34E031329AE79A1008B0814 /* UIMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		C346345D299BF39000FE1395 /* Restaurants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Restaurants.json; sourceTree = "<group>"; };
 		C3463479299D6D3F00FE1395 /* DowntownMapView+Annotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DowntownMapView+Annotations.swift"; sourceTree = "<group>"; };
 		C346347C299D6FA000FE1395 /* DiningMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningMenuView.swift; sourceTree = "<group>"; };
+		C34E031329AE79A1008B0814 /* UIMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				C3463459299B3DBE00FE1395 /* SpotDetailsView.swift */,
 				C3463479299D6D3F00FE1395 /* DowntownMapView+Annotations.swift */,
 				C3327AC929A536FE001FF919 /* TabbedView.swift */,
+				C34E031329AE79A1008B0814 /* UIMap.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			files = (
 				C346344C299B3D0100FE1395 /* Restaurant.swift in Sources */,
 				C3463454299B3D8000FE1395 /* MainView.swift in Sources */,
+				C34E031429AE79A1008B0814 /* UIMap.swift in Sources */,
 				C3463458299B3DAC00FE1395 /* SearchButtonView.swift in Sources */,
 				C346345A299B3DBE00FE1395 /* SpotDetailsView.swift in Sources */,
 				C3327ACC29A54021001FF919 /* MapManager+Location.swift in Sources */,

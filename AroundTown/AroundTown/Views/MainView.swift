@@ -13,15 +13,13 @@ struct MainView: View {
         let categoriesToolbarItem = ToolbarItem(placement: .navigationBarTrailing) {
             SearchButtonView(selectedCategory: $manager.selectedCategory)
         }
-        
         let diningToolbarItem = ToolbarItem(placement: .navigationBarLeading){
             DiningMenuView(selectedRestaurant: $manager.selectedRestaurant)
         }
-        
         return NavigationStack {
             VStack {
-                DowntownMapView()
-                
+                // DowntownMapView()
+                UIMap(manager: manager)
                 if manager.route != nil {
                     TabView {
                         ForEach(0..<manager.route!.steps.count, id:\.self) { index in
