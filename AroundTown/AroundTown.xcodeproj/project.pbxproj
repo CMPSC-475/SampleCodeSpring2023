@@ -31,6 +31,7 @@
 		C346347D299D6FA000FE1395 /* DiningMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346347C299D6FA000FE1395 /* DiningMenuView.swift */; };
 		C34E031429AE79A1008B0814 /* UIMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34E031329AE79A1008B0814 /* UIMap.swift */; };
 		C34E031C29B04C0E008B0814 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34E031B29B04C0E008B0814 /* MapCoordinator.swift */; };
+		C34E031E29B11CF3008B0814 /* DroppedPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34E031D29B11CF3008B0814 /* DroppedPin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		C346347C299D6FA000FE1395 /* DiningMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningMenuView.swift; sourceTree = "<group>"; };
 		C34E031329AE79A1008B0814 /* UIMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMap.swift; sourceTree = "<group>"; };
 		C34E031B29B04C0E008B0814 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		C34E031D29B11CF3008B0814 /* DroppedPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppedPin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				C3463451299B3D7000FE1395 /* Category.swift */,
 				C3327AA329A473AD001FF919 /* MapManager+Search.swift */,
 				C3327AA529A473E2001FF919 /* MapManager+GeoCode.swift */,
+				C34E031D29B11CF3008B0814 /* DroppedPin.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C34E031E29B11CF3008B0814 /* DroppedPin.swift in Sources */,
 				C346344C299B3D0100FE1395 /* Restaurant.swift in Sources */,
 				C3463454299B3D8000FE1395 /* MainView.swift in Sources */,
 				C34E031429AE79A1008B0814 /* UIMap.swift in Sources */,

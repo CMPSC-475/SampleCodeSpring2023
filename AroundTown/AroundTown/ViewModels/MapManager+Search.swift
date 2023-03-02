@@ -41,6 +41,7 @@ extension MapManager {
             
             if let route = response?.routes.first {
                 self.route = route
+                self.routeLines = route.polyline
             }
         }
         

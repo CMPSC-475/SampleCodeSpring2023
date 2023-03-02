@@ -42,6 +42,7 @@ class MapManager  : NSObject, ObservableObject {
     let locationManager : CLLocationManager
     
     @Published var route : MKRoute?
+    @Published var routeLines : MKPolyline?
     
     var userRecentLocation : CLLocation?
     @Published var showingAlert = false

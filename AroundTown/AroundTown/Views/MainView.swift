@@ -20,18 +20,18 @@ struct MainView: View {
             VStack {
                 // DowntownMapView()
                 UIMap(manager: manager)
-                if manager.route != nil {
-                    TabView {
-                        ForEach(0..<manager.route!.steps.count, id:\.self) { index in
-                            Text(manager.route!.steps[index].instructions)
-                        }
-                    }
-                    .tabViewStyle(.page)
-                    .frame(height: 200.0)
-                } else if !manager.places.isEmpty {
-                    TabbedView(places: manager.places, selectedPlace: $manager.selectedPlace)
-                        .frame(height: 200.0)
-                }
+//                if manager.route != nil {
+//                    TabView {
+//                        ForEach(0..<manager.route!.steps.count, id:\.self) { index in
+//                            Text(manager.route!.steps[index].instructions)
+//                        }
+//                    }
+//                    .tabViewStyle(.page)
+//                    .frame(height: 200.0)
+//                } else if !manager.places.isEmpty {
+//                    TabbedView(places: manager.places, selectedPlace: $manager.selectedPlace)
+//                        .frame(height: 200.0)
+//                }
             }
                 .ignoresSafeArea()
                 .toolbar {

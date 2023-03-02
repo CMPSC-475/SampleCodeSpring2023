@@ -17,6 +17,10 @@ struct UIMap: UIViewRepresentable {
         mapView.showsUserLocation = true
         mapView.setRegion(manager.region, animated: true)
         mapView.delegate = context.coordinator
+        
+        let longPress = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.addPin))
+        
+        mapView.addGestureRecognizer(longPress)
         return mapView
     }
     
@@ -24,10 +28,15 @@ struct UIMap: UIViewRepresentable {
         let annotations = mapView.annotations
         mapView.removeAnnotations(annotations)
         mapView.addAnnotations(manager.places)
+        
+        mapView.removeOverlays(mapView.overlays)
+        if let lineOverlay = manager.routeLines {
+            mapView.addOverlay(lineOverlay)
+        }
     }
     
     func makeCoordinator() -> MapCoordinator {
-        return MapCoordinator()
+        return MapCoordinator(manager: manager)
     }
 }
 
