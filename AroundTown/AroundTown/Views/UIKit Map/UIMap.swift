@@ -29,16 +29,6 @@ struct UIMap: UIViewRepresentable {
     func makeCoordinator() -> MapCoordinator {
         return MapCoordinator()
     }
-    
-    class MapCoordinator : NSObject, MKMapViewDelegate {
-        
-        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-            let marker = MKAnnotationView(annotation: annotation, reuseIdentifier: "")
-            marker.image = UIImage(systemName: "mappin")
-            return marker
-        }
-    
-    }
 }
 
 //struct UIMap_Previews: PreviewProvider {

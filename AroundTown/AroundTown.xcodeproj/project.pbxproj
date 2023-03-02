@@ -30,6 +30,7 @@
 		C346347A299D6D3F00FE1395 /* DowntownMapView+Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3463479299D6D3F00FE1395 /* DowntownMapView+Annotations.swift */; };
 		C346347D299D6FA000FE1395 /* DiningMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346347C299D6FA000FE1395 /* DiningMenuView.swift */; };
 		C34E031429AE79A1008B0814 /* UIMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34E031329AE79A1008B0814 /* UIMap.swift */; };
+		C34E031C29B04C0E008B0814 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34E031B29B04C0E008B0814 /* MapCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		C3463479299D6D3F00FE1395 /* DowntownMapView+Annotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DowntownMapView+Annotations.swift"; sourceTree = "<group>"; };
 		C346347C299D6FA000FE1395 /* DiningMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningMenuView.swift; sourceTree = "<group>"; };
 		C34E031329AE79A1008B0814 /* UIMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMap.swift; sourceTree = "<group>"; };
+		C34E031B29B04C0E008B0814 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,13 +112,13 @@
 		C3463444299B3CA500FE1395 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C34E031A29B04BF6008B0814 /* UIKit Map */,
 				C346347B299D6F7600FE1395 /* Menus */,
 				C3463453299B3D8000FE1395 /* MainView.swift */,
 				C3463455299B3D8D00FE1395 /* DowntownMapView.swift */,
 				C3463459299B3DBE00FE1395 /* SpotDetailsView.swift */,
 				C3463479299D6D3F00FE1395 /* DowntownMapView+Annotations.swift */,
 				C3327AC929A536FE001FF919 /* TabbedView.swift */,
-				C34E031329AE79A1008B0814 /* UIMap.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +156,15 @@
 				C346347C299D6FA000FE1395 /* DiningMenuView.swift */,
 			);
 			path = Menus;
+			sourceTree = "<group>";
+		};
+		C34E031A29B04BF6008B0814 /* UIKit Map */ = {
+			isa = PBXGroup;
+			children = (
+				C34E031329AE79A1008B0814 /* UIMap.swift */,
+				C34E031B29B04C0E008B0814 /* MapCoordinator.swift */,
+			);
+			path = "UIKit Map";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 				C3327ACC29A54021001FF919 /* MapManager+Location.swift in Sources */,
 				C346344A299B3CDD00FE1395 /* LocationModel.swift in Sources */,
 				C3463456299B3D8D00FE1395 /* DowntownMapView.swift in Sources */,
+				C34E031C29B04C0E008B0814 /* MapCoordinator.swift in Sources */,
 				C3327AA629A473E2001FF919 /* MapManager+GeoCode.swift in Sources */,
 				C346347D299D6FA000FE1395 /* DiningMenuView.swift in Sources */,
 				C3327ACA29A536FE001FF919 /* TabbedView.swift in Sources */,
