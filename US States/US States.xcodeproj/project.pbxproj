@@ -14,6 +14,7 @@
 		C3600DB929C0315100BBBDCD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3600DB829C0315100BBBDCD /* StorageManager.swift */; };
 		C3600DBD29C0328B00BBBDCD /* StateData.json in Resources */ = {isa = PBXBuildFile; fileRef = C3600DBC29C0328A00BBBDCD /* StateData.json */; };
 		C3600DBF29C0329800BBBDCD /* USState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3600DBE29C0329800BBBDCD /* USState.swift */; };
+		C3600DC129C0DF3200BBBDCD /* StatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3600DC029C0DF3200BBBDCD /* StatesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		C3600DB829C0315100BBBDCD /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		C3600DBC29C0328A00BBBDCD /* StateData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateData.json; sourceTree = "<group>"; };
 		C3600DBE29C0329800BBBDCD /* USState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USState.swift; sourceTree = "<group>"; };
+		C3600DC029C0DF3200BBBDCD /* StatesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,6 @@
 				C3600DB629C030D200BBBDCD /* ViewModels */,
 				C3600DB529C030CD00BBBDCD /* Views */,
 				C3600DA729C0308900BBBDCD /* US_StatesApp.swift */,
-				C3600DA929C0308900BBBDCD /* MainView.swift */,
 				C3600DAB29C0308B00BBBDCD /* Assets.xcassets */,
 				C3600DAD29C0308B00BBBDCD /* Preview Content */,
 			);
@@ -79,6 +80,7 @@
 		C3600DB529C030CD00BBBDCD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C3600DA929C0308900BBBDCD /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				C3600DB829C0315100BBBDCD /* StorageManager.swift */,
+				C3600DC029C0DF3200BBBDCD /* StatesManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3600DB929C0315100BBBDCD /* StorageManager.swift in Sources */,
+				C3600DC129C0DF3200BBBDCD /* StatesManager.swift in Sources */,
 				C3600DBF29C0329800BBBDCD /* USState.swift in Sources */,
 				C3600DAA29C0308900BBBDCD /* MainView.swift in Sources */,
 				C3600DA829C0308900BBBDCD /* US_StatesApp.swift in Sources */,

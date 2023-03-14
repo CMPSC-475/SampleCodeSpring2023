@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct US_StatesApp: App {
+    @StateObject var manager = StatesManager()
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(manager)
         }
     }
 }

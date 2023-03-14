@@ -7,20 +7,23 @@
 
 import SwiftUI
 
-struct MainView: View {    
+struct MainView: View {
+    @EnvironmentObject var manager : StatesManager
+    
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List {
+            ForEach(manager.theStates) { state in
+                Text(state.name)
+            }
         }
-        .padding()
+
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(StatesManager())
     }
 }
